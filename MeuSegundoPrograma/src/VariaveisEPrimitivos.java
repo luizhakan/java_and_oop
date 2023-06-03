@@ -19,10 +19,26 @@ public class VariaveisEPrimitivos {
         int numeroInteiro = (int) livroJava8; // no javascript é chamado de coerção de tipo, em java é chamada de casting
         double livroTDD = 59.90;
         double soma = livroJava8 + livroTDD;
-        boolean resultadoBaixo = soma < 150;
-        boolean resultadoAlto = soma >= 2000;
 
-        System.out.println("O total em estoque é: R$"+ soma);
+        // looping
+        double somaA = 0;
+        int contador = 0;
+        boolean resultadoBaixo = somaA < 150;
+        boolean resultadoAlto = somaA >= 2000;
+
+        for (int i = 0; i < 35; i++){
+            double valorDoLivro = 59.90;
+            somaA+= valorDoLivro;
+        }
+
+//        while (contador < 35) {
+//            double valorDoLivro = 59.90;
+//            somaA += valorDoLivro;
+//            contador++;
+////            System.out.println("Loop");
+//        }
+
+        System.out.println("O total em estoque é: R$"+ somaA);
 
         if (resultadoBaixo){
             System.out.println("O estoque está baixo!");
