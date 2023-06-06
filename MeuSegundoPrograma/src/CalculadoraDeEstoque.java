@@ -1,4 +1,4 @@
-public class VariaveisEPrimitivos {
+public class CalculadoraDeEstoque {
     public static void main(String[] args){
         byte inteiro1 = 10;
         short inteiro2 = 20;  // suporta até 2 bytes
