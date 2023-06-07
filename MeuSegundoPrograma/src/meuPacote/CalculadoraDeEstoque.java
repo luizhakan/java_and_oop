@@ -1,3 +1,5 @@
+package meuPacote;
+
 public class CalculadoraDeEstoque {
     public static void main(String[] args){
         byte inteiro1 = 10;

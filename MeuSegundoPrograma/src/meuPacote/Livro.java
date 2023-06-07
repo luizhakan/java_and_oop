@@ -1,3 +1,5 @@
+package meuPacote;
+
 public class Livro {
     public static class Autor {
         String nome;
@@ -9,9 +11,9 @@ public class Livro {
         };
     }
 
-//    public Livro(){
+//    public meuPacote.Livro(){
 //        System.out.printf("Novo livro criado\n");
-//    } 
+//    }
 
     boolean temAutor(){
         return this.autor != null;
@@ -23,6 +25,16 @@ public class Livro {
     String isbn;
     Autor autor;
 
+    public boolean aplicaDescontoDe(double porcentagem){
+        if (porcentagem > 0.3){
+            System.out.println("Desconto não pode ser maior que 30%");
+            return false;
+        } else {
+            valor -= this.valor * porcentagem;
+            return true;
+        }
+    }
+
     void mostrarDetalhes(){
         System.out.printf("O livro %s identificado pelo ISBN: %s, custa R$%.2f.",  nome, isbn, valor);
         if (this.temAutor()){
@@ -32,14 +44,10 @@ public class Livro {
         };
     };
 
-    public void aplicaDescontoDe(double porcentagem){
-      valor -= this.valor * porcentagem;
-    };
-
     public static void main(String[] args){
-        /* Livro livro1 = new Livro();
-        Livro livro2 = new Livro();
-        Livro livro3 = new Livro(); */
+        /* meuPacote.Livro livro1 = new meuPacote.Livro();
+        meuPacote.Livro livro2 = new meuPacote.Livro();
+        meuPacote.Livro livro3 = new meuPacote.Livro(); */
 
         Autor autor = new Autor();
         autor.nome = "Luiz Hakan";
