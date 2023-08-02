@@ -1,10 +1,12 @@
+import br.com.alura.screenmatch.modelos.Filme;
+
 public class Principal {
     public static void main(String[] args) {
         // atribuicoes
         Filme meuFilme = new Filme();
-        meuFilme.nome = "O poderoso chefão";
-        meuFilme.anoDeLancamento = 1972;
-        meuFilme.duracaoEmMinutos = 175;
+        meuFilme.setNome("O poderoso chefão");
+        meuFilme.setAnoDeLancamento(1972);
+        meuFilme.setDuracaoEmMinutos(175);
 
         // funcoes
         meuFilme.exibeFichaTecnica();
@@ -13,9 +15,8 @@ public class Principal {
         meuFilme.avalia(10);
 
         // print
-        System.out.println("\n" + meuFilme.somaDasAvaliacoes);
-        System.out.println(meuFilme.totalAvaliacoes);
+//        System.out.println("\n" + meuFilme.somaDasAvaliacoes);
+        System.out.printf("\nTotal de avaliações: %d\n", meuFilme.getTotalAvaliacoes());
         meuFilme.pegaMedia();
-        System.out.println(meuFilme);
     }
 }
