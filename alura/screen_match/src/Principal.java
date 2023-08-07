@@ -4,6 +4,8 @@ import br.com.alura.screenmatch.modelos.Episodio;
 import br.com.alura.screenmatch.modelos.Filme;
 import br.com.alura.screenmatch.modelos.Serie;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         // atribuicoes
@@ -13,6 +15,8 @@ public class Principal {
         Filme outroFilme = new Filme();
         FiltroRecomendacao filtro = new FiltroRecomendacao();
         Episodio episodio = new Episodio();
+        var filmeDoLuiz = new Filme();
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>(); // utilizando ArrayList para armazenar uma lista de filmes
 
         meuFilme.setNome("O poderoso chefão");
         meuFilme.setAnoDeLancamento(1972);
@@ -41,6 +45,12 @@ public class Principal {
         episodio.setSerie(lost);
         episodio.setTotalVisualizacoes(300);
         filtro.filtra(episodio);
+        filmeDoLuiz.setNome("Rambo: Até o fim");
+        filmeDoLuiz.setAnoDeLancamento(2019);
+        filmeDoLuiz.avalia(10);
+        listaDeFilmes.add(meuFilme);
+        listaDeFilmes.add(outroFilme);
+        listaDeFilmes.add(filmeDoLuiz);
 
         // print
         System.out.printf("\nTotal de avaliações: %d\n", meuFilme.getTotalAvaliacoes());
@@ -48,5 +58,11 @@ public class Principal {
         lost.exibeFichaTecnica();
         System.out.printf("\nDuração em horas para maratonar %s: %dh\n", lost.getNome(), lost.getDuracaoEmMinutos());
         System.out.println(calculadora.getTempoTotal());
+        System.out.println(listaDeFilmes);
+
+        // loop
+        for (int i = 0; i < listaDeFilmes.size(); i++) {
+            listaDeFilmes.get(i).exibeFichaTecnica();
+        }
     }
 }
