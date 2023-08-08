@@ -58,6 +58,10 @@ public class Serie extends Titulo {
     public void exibeFichaTecnica () {
         System.out.printf("A série: '%s' foi lançado em %d e tem %d minutos cada episódio", this.getNome(), this.getAnoDeLancamento(), getMinutosPorEpisodio());
     }
+    @Override
+    public String toString() {
+        return "Série: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
+    }
 
     public static void main(String[] args) {
 

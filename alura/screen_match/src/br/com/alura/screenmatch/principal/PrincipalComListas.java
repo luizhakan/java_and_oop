@@ -5,6 +5,8 @@ import br.com.alura.screenmatch.modelos.Serie;
 import br.com.alura.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -15,6 +17,12 @@ public class PrincipalComListas {
         var filmeDoLuiz = new Filme("Rambo: Até o fim", 2019, 89);
         ArrayList<Titulo> lista = new ArrayList<>(); // utilizando ArrayList para armazenar uma lista de filmes
         Filme f1 = filmeDoLuiz;
+        ArrayList<String> buscaPorArtista = new ArrayList<>();
+
+        buscaPorArtista.add("Adam Sandler");
+        buscaPorArtista.add("Luiz Hakan");
+        buscaPorArtista.add("Jason Stathan");
+        buscaPorArtista.add("Sylvester Stallone");
 
         lista.add(meuFilme);
         lista.add(outroFilme);
@@ -25,7 +33,18 @@ public class PrincipalComListas {
         meuFilme.avalia(5);
         meuFilme.avalia(10);
 
+        // print
         System.out.println("Testando f1: " + f1.getNome());
+        System.out.println(buscaPorArtista);
+        System.out.println("Filmes: " + lista);
+
+        // metodo
+        Collections.sort(buscaPorArtista);
+        lista.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
+
+        // print excessão
+        System.out.println("Depois da ordenação: " + buscaPorArtista);
+        System.out.println("Depois da ordenação por ano de lançamento: " + lista);
 
         // loop
         lista.forEach(nome -> System.out.println(nome.getNome()));
@@ -36,5 +55,5 @@ public class PrincipalComListas {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
             }
-        }
+    }
 }
