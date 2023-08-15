@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/alura.iml" filepath="$PROJECT_DIR$/.idea/alura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/primeiro_projeto_alura/primeiro_projeto_alura.iml" filepath="$PROJECT_DIR$/primeiro_projeto_alura/primeiro_projeto_alura.iml" />
+      <module fileurl="file://$PROJECT_DIR$/screen_match/screen_match.iml" filepath="$PROJECT_DIR$/screen_match/screen_match.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spotijava/spotijava.iml" filepath="$PROJECT_DIR$/spotijava/spotijava.iml" />
+    </modules>
+  </component>
+</project>
