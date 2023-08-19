@@ -47,7 +47,7 @@ public class Principal {
         listaDeFilmes.add(filmeDoLuiz);
 
         // print
-        System.out.printf("\nTotal de avaliações: %d\n", meuFilme.getTotalAvaliacoes());
+        System.out.printf("\nTotal de avaliações: %d\n", meuFilme.getTotalDeAvaliacoes());
         meuFilme.pegaMedia();
         lost.exibeFichaTecnica();
         System.out.printf("\nDuração em horas para maratonar %s: %dh\n", lost.getNome(), lost.getDuracaoEmMinutos());
