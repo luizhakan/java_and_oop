@@ -1,41 +1,26 @@
 package br.com.alura.screenmatch.modelos;
 
-public abstract class Titulo implements Comparable<Titulo> {
-    // modelo
+import com.google.gson.annotations.SerializedName;
+
+public class Titulo implements Comparable<Titulo> {
+    @SerializedName("Title")
     private String nome;
+    @SerializedName("Year")
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
-    private int totalAvaliacoes;
+    private int totalDeAvaliacoes;
     private int duracaoEmMinutos;
-
-    // constructor
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
         this.anoDeLancamento = anoDeLancamento;
     }
 
-    // set
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public void setAnoDeLancamento(int anoDeLancamento) {
-        this.anoDeLancamento = anoDeLancamento;
-    }
-
-    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
-        this.duracaoEmMinutos = duracaoEmMinutos;
-    }
-
-    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
-        this.incluidoNoPlano = incluidoNoPlano;
-    }
-
-    // get
-    public int getTotalAvaliacoes () {
-        return totalAvaliacoes;
+    public Titulo(TituloOmdb meuTituloOmdb) {
+        this.nome = meuTituloOmdb.title();
+        this.anoDeLancamento = Integer.valueOf(meuTituloOmdb.year());
+        this.duracaoEmMinutos = Integer.valueOf(meuTituloOmdb.runtime().substring(0,2));
     }
 
     public String getNome() {
@@ -54,26 +39,50 @@ public abstract class Titulo implements Comparable<Titulo> {
         return duracaoEmMinutos;
     }
 
-    // métodos
-
-    public void exibeFichaTecnica () {
-        System.out.printf("O filme: '%s' foi lançado em %d e tem %d minutos\n", nome, anoDeLancamento, getDuracaoEmMinutos());
+    public int getTotalDeAvaliacoes() {
+        return totalDeAvaliacoes;
     }
 
-    public void avalia (double nota) {
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        this.anoDeLancamento = anoDeLancamento;
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
+
+    public void exibeFichaTecnica(){
+        System.out.println("Nome do filme: " + nome);
+        System.out.println("Ano de lançamento: " + anoDeLancamento);
+    }
+
+    public void avalia(double nota){
         somaDasAvaliacoes += nota;
-        totalAvaliacoes++;
+        totalDeAvaliacoes++;
     }
 
-    public void pegaMedia () {
-        System.out.printf("Média: %.2f\n", somaDasAvaliacoes / totalAvaliacoes);
+    public double pegaMedia(){
+        return somaDasAvaliacoes / totalDeAvaliacoes;
+    }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", anoDeLancamento=" + anoDeLancamento +
+                ", duraçao=" + duracaoEmMinutos +
+                '}';
     }
 
     @Override
     public int compareTo(Titulo outroTitulo) {
         return this.getNome().compareTo(outroTitulo.getNome());
-    }
-    public static void main(String[] args) {
-
     }
 }
