@@ -54,6 +54,6 @@ public class PrincipalComListas {
             if (item instanceof Filme filme) {
                 System.out.println("Classificação: " + filme.getClassificacao());
             }
-            }
+        }
     }
 }

@@ -45,7 +45,7 @@ public class Serie extends Titulo {
     }
 
     @Override
-    public int getDuracaoEmMinutos () {
+    public int getDuracaoEmMinutos() {
         return temporadas * episodiosPorTemporadas * minutosPorEpisodio;
     }
 
@@ -55,9 +55,11 @@ public class Serie extends Titulo {
 
     // método
     @Override
-    public void exibeFichaTecnica () {
-        System.out.printf("A série: '%s' foi lançado em %d e tem %d minutos cada episódio", this.getNome(), this.getAnoDeLancamento(), getMinutosPorEpisodio());
+    public void exibeFichaTecnica() {
+        System.out.printf("A série: '%s' foi lançado em %d e tem %d minutos cada episódio", this.getNome(),
+                this.getAnoDeLancamento(), getMinutosPorEpisodio());
     }
+
     @Override
     public String toString() {
         return "Série: " + this.getNome() + "(" + this.getAnoDeLancamento() + ")";
